@@ -15,13 +15,12 @@ module.exports = class Root extends Component {
        * wraps our app - thus making the Redux store/state available to our 'connect()'
        * calls in component hierarchy below.
        */
-      <Provider store={store}>
-        <div>
-          <App />
+        <div className="MyApp">
+          <App store={store}/>
           {/* Being the dev version of our Root component, we include DevTools below */}
-          <DevTools />
+          <DevTools store={store}/>
         </div>
-      </Provider>
+
     );
   }
 };

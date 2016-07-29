@@ -12,6 +12,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler));
 app.use('/f2apps', express.static('src/f2apps'));
+app.use('/assets', express.static('src/assets'));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

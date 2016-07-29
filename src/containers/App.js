@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import { Provider } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as CounterActions from '../actions/CounterActions';
 import Counter from '../components/Counter';
 import Footer from '../components/Footer';
-
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).
  * Again, this is because it serves to wrap the rest of our application with the Provider
@@ -13,14 +13,16 @@ import Footer from '../components/Footer';
 export default class App extends Component {
   render() {
     // we can use ES6's object destructuring to effectively 'unpack' our props
-    const { counter, actions } = this.props;
+    const { counter, actions} = this.props;
     return (
-      <div className="main-app-container">
-        <div className="main-app-nav">Simple Redux Boilerplate</div>
-        {/* notice that we then pass those unpacked props into the Counter component */}
-        <Counter counter={counter} actions={actions} />
-        <Footer />
-      </div>
+      <Provider store={this.props.store}>
+        <div className="main-app-container">
+          <div className="main-app-nav">Simple Redux Boilerplate</div>
+          {/* notice that we then pass those unpacked props into the Counter component */}
+          <Counter counter={counter} actions={actions} />
+          <Footer />
+        </div>
+    </Provider>
     );
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import jQuery from 'jquery';
-import F2 from './assets/f2container.js';
 import F2Storage from './assets/f2-samplePlugin.js';
 /**
  * Import the stylesheet you want used! Here we just reference
@@ -17,7 +16,7 @@ import { configureStore } from './store/configureStore';
 import { Root } from './containers/Root';
 
 const store = configureStore();
-
+F2.YourPluginName.doSomething('My Note');
 ReactDOM.render(
   <Root store={store} />,
   document.getElementById('root')

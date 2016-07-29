@@ -1,6 +1,6 @@
 F2_jsonpCallback_openf2_examples_javascript_helloworld({
 	"scripts":[
-		"http://localhost:3000/f2apps/appClass.js"
+		"http://localhost:3000/static/bundle.js"
 	],
 	"styles":[
 
@@ -11,6 +11,7 @@ F2_jsonpCallback_openf2_examples_javascript_helloworld({
 				'<div>',
 					'<div class="f2-app-view" data-f2-view="home">',
 						'<p>Hello World!</p>',
+						'<div id="root"></div>',
 					'</div>',
 				'</div>'
 			].join("")
